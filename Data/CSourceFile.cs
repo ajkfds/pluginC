@@ -38,6 +38,7 @@ namespace pluginC.Data
         }
 
         public codeEditor.CodeEditor.ParsedDocument ParsedDocument { get; set; }
+        public bool ParseRequested { get; set; }
 
         private codeEditor.CodeEditor.CodeDocument document = null;
         public codeEditor.CodeEditor.CodeDocument CodeDocument
