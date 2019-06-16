@@ -37,8 +37,17 @@ namespace pluginC.Data
             return fileItem;
         }
 
+        private volatile bool parseRequested = false;
+        public bool ParseRequested { get { return parseRequested; } set { parseRequested = value; } }
+
+        private volatile bool reloadRequested = false;
+        public bool ReloadRequested { get { return reloadRequested; } set { reloadRequested = value; } }
+        public void Reload()
+        {
+            CodeDocument = null;
+        }
+
         public codeEditor.CodeEditor.ParsedDocument ParsedDocument { get; set; }
-        public bool ParseRequested { get; set; }
 
         private codeEditor.CodeEditor.CodeDocument document = null;
         public codeEditor.CodeEditor.CodeDocument CodeDocument
