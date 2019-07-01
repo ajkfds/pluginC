@@ -12,7 +12,7 @@ namespace pluginC.Parser
         {
         }
 
-        public override void Parse()
+        public override void Parse(ParseMode parseMode)
         {
             string text = document.CreateString();
             int index = text.IndexOf("int");
