@@ -91,9 +91,9 @@ namespace pluginC.Data
             return new codeEditor.NavigatePanel.TextFileNode(ID, Project);
         }
 
-        public virtual codeEditor.CodeEditor.DocumentParser CreateDocumentParser(codeEditor.CodeEditor.CodeDocument document, string id, codeEditor.Data.Project project)
+        public virtual codeEditor.CodeEditor.DocumentParser CreateDocumentParser(codeEditor.CodeEditor.CodeDocument document, string id, codeEditor.Data.Project project,DocumentParser.ParseModeEnum parseMode)
         {
-            return new Parser.Parser(document, id, project);
+            return new Parser.Parser(document, id, project,parseMode);
         }
 
         public virtual void AfterKeyPressed(System.Windows.Forms.KeyPressEventArgs e)

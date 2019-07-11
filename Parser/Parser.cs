@@ -8,11 +8,11 @@ namespace pluginC.Parser
 {
     public class Parser : codeEditor.CodeEditor.DocumentParser
     {
-        public Parser(codeEditor.CodeEditor.CodeDocument document, string id, codeEditor.Data.Project project) : base (document,id,project)
+        public Parser(codeEditor.CodeEditor.CodeDocument document, string id, codeEditor.Data.Project project, codeEditor.CodeEditor.DocumentParser.ParseModeEnum parseMode) : base (document,id,project,parseMode)
         {
         }
 
-        public override void Parse(ParseMode parseMode)
+        public override void Parse()
         {
             string text = document.CreateString();
             int index = text.IndexOf("int");
