@@ -37,6 +37,12 @@ namespace pluginC.Data
             return fileItem;
         }
 
+
+        public bool IsCodeDocumentCashed
+        {
+            get { if (document == null) return false; else return true; }
+        }
+
         private volatile bool parseRequested = false;
         public bool ParseRequested { get { return parseRequested; } set { parseRequested = value; } }
 
@@ -45,6 +51,11 @@ namespace pluginC.Data
         public void Reload()
         {
             CodeDocument = null;
+        }
+        public override void DisposeItem()
+        {
+            if (ParsedDocument != null) ParsedDocument.Dispose();
+            base.DisposeItem();
         }
 
         public codeEditor.CodeEditor.ParsedDocument ParsedDocument { get; set; }
