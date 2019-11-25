@@ -9,14 +9,17 @@ namespace pluginC.NavigatePanel
 {
     public class CSourceFileNode : codeEditor.NavigatePanel.FileNode
     {
-        public CSourceFileNode(string ID, codeEditor.Data.Project project) : base(ID, project)
+        public CSourceFileNode(Data.CSourceFile file) : base(file)
         {
 
         }
 
-        public codeEditor.Data.ITextFile ITextFile
+        public codeEditor.Data.TextFile TextFile
         {
-            get => Project.GetRegisterdItem(ID) as codeEditor.Data.ITextFile;
+            get
+            {
+                return Item as codeEditor.Data.TextFile;
+            }
         }
 
         public override string Text
@@ -43,7 +46,7 @@ namespace pluginC.NavigatePanel
 
         public override void Selected()
         {
-            codeEditor.Controller.CodeEditor.SetTextFile(ITextFile);
+            codeEditor.Controller.CodeEditor.SetTextFile(TextFile);
         }
     }
 }

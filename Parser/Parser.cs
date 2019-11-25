@@ -8,7 +8,7 @@ namespace pluginC.Parser
 {
     public class Parser : codeEditor.CodeEditor.DocumentParser
     {
-        public Parser(codeEditor.CodeEditor.CodeDocument document, string id, codeEditor.Data.Project project, codeEditor.CodeEditor.DocumentParser.ParseModeEnum parseMode) : base (document,id,project,parseMode)
+        public Parser(Data.CSourceFile file, codeEditor.CodeEditor.DocumentParser.ParseModeEnum parseMode) : base (file,parseMode)
         {
         }
 
