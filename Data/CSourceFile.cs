@@ -12,7 +12,7 @@ namespace pluginC.Data
     {
         public static CSourceFile Create(string relativePath, codeEditor.Data.Project project)
         {
-            string id = GetID(relativePath, project);
+            //string id = GetID(relativePath, project);
 
             CSourceFile fileItem = new CSourceFile();
             fileItem.Project = project;
