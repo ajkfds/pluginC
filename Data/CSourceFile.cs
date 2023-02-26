@@ -32,7 +32,7 @@ namespace pluginC.Data
         private codeEditor.CodeEditor.CodeDocument document = null;
 
 
-        public override codeEditor.NavigatePanel.NavigatePanelNode CreateNode()
+        protected override codeEditor.NavigatePanel.NavigatePanelNode createNode()
         {
             return new codeEditor.NavigatePanel.TextFileNode(this);
         }
