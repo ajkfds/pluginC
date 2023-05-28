@@ -29,7 +29,6 @@ namespace pluginC.Data
             return fileItem;
         }
 
-        private codeEditor.CodeEditor.CodeDocument document = null;
 
 
         protected override codeEditor.NavigatePanel.NavigatePanelNode createNode()
